@@ -1,6 +1,6 @@
-#Hello there
-###It is us, the folks at Group Name
-###We have a new game for you!
+# Hello there!
+### It is us, the folks at Group Name
+### We have a new game for you!
 
 ##  GMTK 2022 Game Jam: Roll of the Dice!
 
