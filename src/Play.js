@@ -12,18 +12,18 @@ class Play extends Phaser.Scene {
             frameWidth: 64,
             frameHeight: 64,
             startFrame: 0,
-            endFrame: 32,
+            endFrame: 31,
         });
         this.load.spritesheet('negative die', 'Die_Negative_Sheet.png', {
             frameWidth: 96,
             frameHeight: 96,
-            startFrame: 1,
+            startFrame: 0,
             endFrame: 6
         });
         this.load.spritesheet('positive die', 'Die_Positive_Sheet.png', {
             frameWidth: 96,
             frameHeight: 96,
-            startFrame: 1,
+            startFrame: 0,
             endFrame: 6
         });
     }
@@ -43,8 +43,7 @@ class Play extends Phaser.Scene {
         keyLeft = this.input.keyboard.addKey(KeyCodes.LEFT);
         keyRight = this.input.keyboard.addKey(KeyCodes.RIGHT);
 
-        this.player = new Player(this, 50, 50, 'player', 0, [keyUp, keyDown, keyLeft, keyRight]);
-   
+        this.player = new Player(this, 50, 50, 'font', 30, [keyUp, keyDown, keyLeft, keyRight]).setOrigin(0.5, 1);   
         this.physics.world.setBounds(0, 0, game.config.width, game.config.height);
     }
 

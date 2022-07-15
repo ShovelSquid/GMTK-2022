@@ -12,6 +12,7 @@ class Player extends Phaser.Physics.Arcade.Sprite {
         this.DRAG = this.ACCELERATION;
         this.setMaxVelocity(this.SPEED);
         this.setDrag(this.DRAG, this.DRAG);
+        this.target = 0;
 
         this.setCollideWorldBounds(true, 0, 0);
 
@@ -19,6 +20,9 @@ class Player extends Phaser.Physics.Arcade.Sprite {
         this.kDown = keys[1];
         this.kLeft = keys[2];
         this.kRight = keys[3];
+
+
+
     }
 
     update(delta) {
@@ -39,5 +43,9 @@ class Player extends Phaser.Physics.Arcade.Sprite {
         }
 
         this.setAcceleration(accelx, accely);
+
+        this.target = Phaser.Math.Angle.BetweenPoints(this, game.input.mousePointer);
+        // this.rotation = Phaser.Math.Angle.RotateTo(this.rotation, this.target + Math.PI/2, Math.PI*0.01*delta);
+        this.rotation = this.target + Math.PI/2;
     }
 }
