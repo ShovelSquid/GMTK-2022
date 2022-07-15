@@ -20,7 +20,7 @@ let config = {
     pixelArt: false,
 };
 
-let keyUp, keyDown, keyLeft, keyRight;
+let keyUp, keyDown, keyLeft, keyRight, keyW, keyA, keyS, keyD;
 
 
 let game = new Phaser.Game(config);

@@ -7,9 +7,9 @@ class Player extends Phaser.Physics.Arcade.Sprite {
         this.scene.add.existing(this);
         this.scene.physics.add.existing(this);
 
-        this.SPEED = 500;
+        this.SPEED = 600;
         this.ACCELERATION = 5000;
-        this.DRAG = this.ACCELERATION;
+        this.DRAG = this.ACCELERATION/4;
         this.setMaxVelocity(this.SPEED);
         this.setDrag(this.DRAG, this.DRAG);
         this.target = 0;

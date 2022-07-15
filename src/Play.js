@@ -29,11 +29,6 @@ class Play extends Phaser.Scene {
     }
 
     create() {
-        // this.anims.create({
-        //     key: 'fontplayer',
-        //     frames: this.anims.generateFrameNumbers('negative die', {start:1, end: 1}),
-        //     frameRate: 1
-        // })
         this.add.tileSprite(0, 0, this.width, this.height, 'background');
 
         const KeyCodes = Phaser.Input.Keyboard.KeyCodes; // Less typing
@@ -42,9 +37,17 @@ class Play extends Phaser.Scene {
         keyDown = this.input.keyboard.addKey(KeyCodes.DOWN);
         keyLeft = this.input.keyboard.addKey(KeyCodes.LEFT);
         keyRight = this.input.keyboard.addKey(KeyCodes.RIGHT);
+        keyW = this.input.keyboard.addKey(KeyCodes.W);
+        keyA = this.input.keyboard.addKey(KeyCodes.A);
+        keyS = this.input.keyboard.addKey(KeyCodes.S);
+        keyD = this.input.keyboard.addKey(KeyCodes.D);
 
-        this.player = new Player(this, 50, 50, 'font', 30, [keyUp, keyDown, keyLeft, keyRight]).setOrigin(0.5, 1);   
+        this.player = new Player(this, 50, 50, 'font', 30, [keyW, keyS, keyA, keyD]).setOrigin(0.5, 1);   
         this.physics.world.setBounds(0, 0, game.config.width, game.config.height);
+
+        // this.input.on("pointermove", () => {
+            // this.player.target = yadda.yadda 
+        //})
     }
 
     update(time, delta) {
